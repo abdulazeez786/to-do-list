@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <link rel="stylesheet"type="text/css"href="./style.css">
+    </head>
+    <style>
+ body{
+    background-color: rgb(224, 25, 165);
+    color:   #fff;
+    background-image: url("https://t4.ftcdn.net/jpg/06/91/05/19/360_F_691051962_GFhQPOAXABmf7l706q89b2PFh6FnB1kI.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-position: cover;
+    min-height: 100vh;
+ }
+ .registration-form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    margin: 30px;
+    padding-left: 40px;
+    padding-right:50px;
+    box-shadow: 1px 2px 50px orangered;
+ }
+ .registration-form h1{
+    font-size: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 40px 0;
+
+ }
+ .registration-form p{
+    font-size:20px;
+    margin:15px 0;
+
+ }
+ .registration-form input{
+    font-size: 16px;
+    padding:15px 10px;
+    width: 100%;
+    border:0;
+    border-radius: 5px;
+    outline:none;
+ }
+ .registration-form button{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 15px;
+    width: 50%;
+    border: 0;
+    border-radius: 5px;
+    background-color:#fff;
+ }
+
+ .registration-form button:hover{
+    color:red;
+ }
+ .link{
+   text-decoration: none;
+ }
+        </style>
+<body>
+    <div class="registration-form">
+        <h1>Registration form</h1>
+        <form action="#" method="post">
+            <p>&nbsp;&nbsp;User Name:</p>
+            <input type="text" name="user name" placeholder="User Name" required>
+            <p>&nbsp;&nbsp;Email:</p>
+            <input type="email"name="email" placeholder="Email" required>
+            <P>&nbsp;&nbsp;password:</P>
+            <input type="password" name="password" placeholder="password" required><center>
+            <button type="submit" onclick="CA()">SUBMIT</button><br></center>
+            <P style="text-align:center">Already have an account ?&nbsp;&nbsp;&nbsp;<a class="link"  href="loginpg.html" style="color: rgb(25, 186, 186);">sign up</a></P>
+               </form>
+               </div>
+               <script>
+                function CA(){
+                    window.alert("Your Account is Created");
+                    window.open("loginpg.html")
+                }
+               </script>
+</body>
+</html>

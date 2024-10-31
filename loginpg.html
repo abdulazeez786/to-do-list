@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LOGIN FROM</title>
+        <style>
+            body{
+                background: blueviolet;
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-image: url("https://t4.ftcdn.net/jpg/06/91/05/19/360_F_691051962_GFhQPOAXABmf7l706q89b2PFh6FnB1kI.jpg");
+                background-repeat: no-repeat;
+                background-position: cover;
+            }
+            table{
+                border-radius: 15px;
+                padding-right: 110px;
+                /* padding:50px; */
+                box-shadow: 1px 2px 50px red;
+                /* margin:20px; */
+            }
+            fieldset{
+                box-sizing: content-box;
+                box-shadow: 1px 2px yellow;
+            }
+            h1{
+                font: size 36px;
+                text-align: center;
+                align-items:center;
+                position:relative;
+                /* display: flex; */
+                flex-wrap: nowrap;
+                color: #fff;
+                margin:20px;
+                border-radius: 10px;
+            }
+            input{
+                width: 100%;
+                height: 50px;
+                margin: 20px ;
+                border-radius: 20px;
+            }
+            input{
+                width: 100%;
+                height: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                border: 2px solid rgba(225, 225, 225, .2);
+                font-size: 16px;
+                color: #fff;
+                padding: 20px 45px 20px 20px;
+            }
+            input::placeholder{
+                color: #fff;
+            }
+          
+            button{
+                width:50px;
+                margin-left:60px;
+                border-radius:10px;
+                padding:10px;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                height: 45px;
+                background: #fff;
+                border-radius: 40px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+                cursor: pointer;
+                font-size: 16px;
+                color: #333;
+                font-weight: 600;
+            }
+button:hover{
+    color: rgb(220, 221, 220);
+    background-color: rgb(114, 215, 64);
+}
+.link{
+    text-decoration: none;
+}
+        </style>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+            <table><center>
+                <h1 align="center">&nbsp;&nbsp;&nbsp;&nbsp;LOGIN</h1></center>
+                <tr>
+                    <td><input type="text" placeholder="Email" required></td>
+                </tr>
+                <tr>
+                    <td><input type="password" placeholder="Password" required></td>
+                </tr>
+                <tr>
+                    <td><button  onclick="MP()"><a class="link" href="tdl.html">Sign In</a></button></td>
+                </tr>
+            </table>
+        </fieldset>
+        </form>
+        <script>
+            function MP(){
+                window.open("tdl.html")
+            }
+        </script>
+    </body>
+</html>
