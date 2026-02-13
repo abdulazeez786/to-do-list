@@ -2,9 +2,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskInput = document.getElementById("taskInput");
     const addButton = document.getElementById("addButton");
     const taskList = document.getElementById("taskList");
-    function saveData(){
-localStorage.setItem("data",taskList.innerhtml);
+
+    // Load data on startup
+    function showTask() {
+        taskList.innerHTML = localStorage.getItem("data") || "";
+        // Re-attach event listeners to deleted buttons after loading
+        const deleteButtons = document.querySelectorAll(".deleteButton");
+        deleteButtons.forEach(btn => {
+            btn.onclick = function() {
+                this.parentElement.remove();
+                saveData();
+            };
+        });
     }
+
+    function saveData() {
+        localStorage.setItem("data", taskList.innerHTML);
+    }
+
     function addTask() {
         const taskText = taskInput.value.trim();
         if (taskText === "") return;
@@ -15,27 +30,27 @@ localStorage.setItem("data",taskList.innerhtml);
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
         deleteButton.className = "deleteButton";
-        deleteButton.onclick = () => {
-            taskList.removeChild(li);
+        deleteButton.onclick = (e) => {
+            e.stopPropagation(); // Prevent triggering the 'completed' toggle
+            li.remove();
+            saveData();
         };
 
         li.appendChild(deleteButton);
         li.onclick = () => {
             li.classList.toggle("completed");
+            saveData();
         };
 
         taskList.appendChild(li);
-        taskInput.value = ""; // Clear input
+        taskInput.value = ""; 
         saveData();
     }
 
-    // Add event listener to the button
     addButton.addEventListener("click", addTask);
-
-    // Allow pressing Enter to add task
-    taskInput.addEventListener("keypress", (event) => {
-        if (event.key === "Enter") {
-            addTask();
-        }
+    taskInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") addTask();
     });
+
+    showTask(); // Initialize the list
 });
